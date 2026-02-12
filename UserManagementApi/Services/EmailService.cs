@@ -44,7 +44,7 @@ public class EmailService : IEmailService
             using var client = new SmtpClient();
             await client.ConnectAsync(
                 _configuration["EmailSettings:SmtpServer"], 
-                int.Parse(_configuration["EmailSettings:SmtpPort"]), 
+                int.Parse(_configuration["EmailSettings:SmtpPort"] ?? "587"), 
                 SecureSocketOptions.StartTls
             );
             
