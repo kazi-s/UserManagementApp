@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { AuthResponse, LoginCredentials, RegisterCredentials, User } from '../types/User';
 
-const API_URL = 'http://localhost:5080/api';
+// const API_URL = 'http://localhost:5080/api';
+const API_URL = 'https://usermanagementapp-g3ni.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_URL,

@@ -25,7 +25,9 @@ public class EmailService : IEmailService
             message.To.Add(new MailboxAddress(name, email));
             message.Subject = "Confirm Your Email Address";
 
-            var confirmationLink = $"http://localhost:5080/api/auth/confirm-email?email={email}&token={token}";
+            //var confirmationLink = $"http://localhost:5080/api/auth/confirm-email?email={email}&token={token}";
+
+            var confirmationLink = $"https://usermanagementapp-g3ni.onrender.com/api/auth/confirm-email?email={email}&token={token}";
             
             var bodyBuilder = new BodyBuilder();
             bodyBuilder.HtmlBody = $@"
