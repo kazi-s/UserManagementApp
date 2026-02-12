@@ -1,0 +1,6 @@
+namespace UserManagementApi.Services;
+
+public interface IEmailService
+{
+    Task SendConfirmationEmailAsync(string email, string name, string token);
+}
