@@ -47,6 +47,12 @@ builder.Services.AddCors(options =>
         });
 });
 
+using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+    dbContext.Database.Migrate();
+}
+
 var app = builder.Build();
 
 app.UseCors("AllowReactApp");
